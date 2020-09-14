@@ -114,7 +114,7 @@ class DieRollerForm extends Component {
 		var hasPrereqsForTrait = await this.traits.hasPrerequisites(newTrait, currentTraits);
 		console.log(`Already has trait ${newTrait.name} = ${alreadyHasTrait}`);
 		console.log(`Has prereqs for trait ${newTrait.name} = ${hasPrereqsForTrait}`);
-		while (alreadyHasTrait && !traitIsOkToRepeat || !hasPrereqsForTrait) {
+		while (alreadyHasTrait && (!traitIsOkToRepeat || !hasPrereqsForTrait)) {
 			newTrait = await this.traits.pickTrait();
 			alreadyHasTrait = currentTraits.includes(newTrait.name);
 			traitIsOkToRepeat = this.traits.canRepeatTraits.includes(newTrait.name);

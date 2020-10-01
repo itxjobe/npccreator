@@ -13,12 +13,12 @@ The following code, when run via `npm start`, should open a web page that enable
 * Orders trait list and lists applicable attribute for each
 * Add level up option which selects a random trait, looks at prerequisites, and handles the heavy lifting
 
-## Docker details for Josh
+## Docker details for Josh (updated 30-SEP-2020)
 
-This worked locally and then I was able to start the browser from my VS Code instance
+I was able to run this in a docker image and get to it through my Docker dashboard. Much simpler as well
 
-* `docker build -t npccreator:dev .a`
-* `docker run -it --rm -v ${PWD}:/app -v /app/node-modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true npccreator:dev`
+* `docker build -t ananpccreator .`
+* `docker run -it -p 3000:3000 -d ananpccreator`
 
 ## What remains
 
